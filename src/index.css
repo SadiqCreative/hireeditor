@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg: #FFFFFF;
+    --text: #0F172A;
+    --muted: #64748B;
+    --accent: #F27D26;
+    --accent-hover: #D96916;
+    --border: rgba(15, 23, 42, 0.08);
+    --card-bg: #F8FAFC;
+    --line-color: rgba(15, 23, 42, 0.12);
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+
+  .dark {
+    --bg: #0A0A0B;
+    --text: #F8FAFC;
+    --muted: #94A3B8;
+    --accent: #F97316;
+    --accent-hover: #EA580C;
+    --border: rgba(248, 250, 252, 0.1);
+    --card-bg: #151518;
+    --line-color: rgba(248, 250, 252, 0.15);
+  }
+
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--text);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Artistic Flair glowing pulse animation */
+@keyframes artistic-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.85;
+  }
+}
+
+.animate-artistic-pulse {
+  animation: artistic-pulse 3s ease-in-out infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.animate-dash {
+  animation: dash 15s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}

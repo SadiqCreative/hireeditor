@@ -1,0 +1,6 @@
+{
+  "name": "Editors on Demand",
+  "description": "Premium video editor talent matching service connecting brands, creators, agencies, and startups with vetted professional video editors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
